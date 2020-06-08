@@ -1,0 +1,9 @@
+#bioformats
+#javabridge
+matplotlib
+numpy
+pandas
+pillow
+scipy
+seaborn
+scikit-image
