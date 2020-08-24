@@ -1,0 +1,458 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "mcmicro_galaxy_port",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "RAW_TIFF_FILES"
+                }
+            ],
+            "label": "RAW_TIFF_FILES",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "bottom": 176.5,
+                "height": 61,
+                "left": -777,
+                "right": -577,
+                "top": 115.5,
+                "width": 200,
+                "x": -777,
+                "y": 115.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "f8038d71-b1ea-4cbb-83a2-eae2d564c556",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "c494a42d-b9d7-4db7-8cc0-88304f3af215"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "MARKERS"
+                }
+            ],
+            "label": "MARKERS",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 719,
+                "height": 61,
+                "left": -776,
+                "right": -576,
+                "top": 658,
+                "width": 200,
+                "x": -776,
+                "y": 658
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "01656e60-bbe7-4dde-ac32-12314bf903fb",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "9c187c8b-bc3c-4cad-8023-e85cc7d3d6d3"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "TYPE MAP"
+                }
+            ],
+            "label": "TYPE MAP",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 849.5,
+                "height": 61,
+                "left": -777,
+                "right": -577,
+                "top": 788.5,
+                "width": 200,
+                "x": -777,
+                "y": 788.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "8a00ce8d-8a8b-41bc-93a5-1d4c7dfbd583",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "b1c92843-71ec-44c1-81d1-f242f58cc8a4"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "basic_illumination",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "in_files": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "basic_illumination",
+            "outputs": [
+                {
+                    "name": "output-dfp",
+                    "type": "input"
+                },
+                {
+                    "name": "output-ffp",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 463.5,
+                "height": 222,
+                "left": -356,
+                "right": -156,
+                "top": 241.5,
+                "width": 200,
+                "x": -356,
+                "y": 241.5
+            },
+            "post_job_actions": {},
+            "tool_id": "basic_illumination",
+            "tool_state": "{\"in_files\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1",
+            "type": "tool",
+            "uuid": "42dff405-9750-4295-a194-c3ce2cde83ad",
+            "workflow_outputs": [
+                {
+                    "label": "basic_illumination on input dataset(s): DFP",
+                    "output_name": "output-dfp",
+                    "uuid": "a7664ab5-4d3e-4f03-891a-880cae1259c4"
+                },
+                {
+                    "label": "basic_illumination on input dataset(s): FFP",
+                    "output_name": "output-ffp",
+                    "uuid": "05d16c3f-f11d-4310-9086-344f8bc8f643"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "ashlar",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "ldfp": {
+                    "id": 3,
+                    "output_name": "output-dfp"
+                },
+                "lffp": {
+                    "id": 3,
+                    "output_name": "output-ffp"
+                },
+                "lraw": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ashlar",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tiff"
+                }
+            ],
+            "position": {
+                "bottom": 281.5,
+                "height": 172,
+                "left": -85,
+                "right": 115,
+                "top": 109.5,
+                "width": 200,
+                "x": -85,
+                "y": 109.5
+            },
+            "post_job_actions": {},
+            "tool_id": "ashlar",
+            "tool_state": "{\"ldfp\": {\"__class__\": \"ConnectedValue\"}, \"lffp\": {\"__class__\": \"ConnectedValue\"}, \"lraw\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1",
+            "type": "tool",
+            "uuid": "8b277cbd-3c46-4736-800f-0cd2bc25cba5",
+            "workflow_outputs": [
+                {
+                    "label": "ashlar on input dataset(s)",
+                    "output_name": "output",
+                    "uuid": "38aac70e-b483-4bf9-aa01-3188194539fd"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "unmicst",
+            "errors": "Tool is not installed",
+            "id": 5,
+            "input_connections": {
+                "core": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "unmicst",
+            "outputs": [],
+            "position": {
+                "bottom": 505,
+                "height": 182,
+                "left": 180,
+                "right": 380,
+                "top": 323,
+                "width": 200,
+                "x": 180,
+                "y": 323
+            },
+            "post_job_actions": {},
+            "tool_id": "unmicst",
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"core\": {\"__class__\": \"ConnectedValue\"}}",
+            "tool_version": "0.1",
+            "type": "tool",
+            "uuid": "d1a1fcd8-75b7-447d-a757-226e9d76f697",
+            "workflow_outputs": [
+                {
+                    "label": "unmicst on input dataset(s): Preview",
+                    "output_name": "previews",
+                    "uuid": "1d4a9ac6-f356-4863-b2c6-d3bbdc41101e"
+                },
+                {
+                    "label": "unmicst on input dataset(s): Probabilities",
+                    "output_name": "probabilities",
+                    "uuid": "71d74f61-b187-4af3-944f-7c593c2b746f"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "s3segmenter",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "image_path": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "stack_path": {
+                    "id": 5,
+                    "output_name": "probabilities"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "s3segmenter",
+            "outputs": [
+                {
+                    "name": "cell_mask",
+                    "type": "tiff"
+                },
+                {
+                    "name": "nuclei_mask",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 279,
+                "height": 152,
+                "left": 404,
+                "right": 604,
+                "top": 127,
+                "width": 200,
+                "x": 404,
+                "y": 127
+            },
+            "post_job_actions": {},
+            "tool_id": "s3segmenter",
+            "tool_state": "{\"crop\": \"interactiveCrop\", \"image_path\": {\"__class__\": \"ConnectedValue\"}, \"nuc_chan\": \"1\", \"stack_path\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1",
+            "type": "tool",
+            "uuid": "f6e72f00-49f2-4737-bc80-27d4fab97b99",
+            "workflow_outputs": [
+                {
+                    "label": "Cell Masks",
+                    "output_name": "cell_mask",
+                    "uuid": "0e17e934-e6c1-4e52-ab51-64042ab0d0c7"
+                },
+                {
+                    "label": "Nuclei Masks",
+                    "output_name": "nuclei_mask",
+                    "uuid": "2f91ff81-f842-4a9e-b83c-3d1bc6dea87c"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "quantification",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "core": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "markerFile": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "maskSpt": {
+                    "id": 6,
+                    "output_name": "cell_mask"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "quantification",
+            "outputs": [
+                {
+                    "name": "quant_out",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "bottom": 506,
+                "height": 172,
+                "left": 726,
+                "right": 926,
+                "top": 334,
+                "width": 200,
+                "x": 726,
+                "y": 334
+            },
+            "post_job_actions": {},
+            "tool_id": "quantification",
+            "tool_state": "{\"core\": {\"__class__\": \"ConnectedValue\"}, \"markerFile\": {\"__class__\": \"ConnectedValue\"}, \"maskSpt\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1",
+            "type": "tool",
+            "uuid": "36557006-b5fd-4863-8614-99d6eab36635",
+            "workflow_outputs": [
+                {
+                    "label": "quantification on input dataset(s)",
+                    "output_name": "quant_out",
+                    "uuid": "9df44cde-6aed-43c0-8350-a2a9369b7e57"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "naivestates",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "counts": {
+                    "id": 7,
+                    "output_name": "quant_out"
+                },
+                "typemap": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool naivestates",
+                    "name": "counts"
+                },
+                {
+                    "description": "runtime parameter for tool naivestates",
+                    "name": "typemap"
+                }
+            ],
+            "label": null,
+            "name": "naivestates",
+            "outputs": [
+                {
+                    "name": "states",
+                    "type": "csv"
+                },
+                {
+                    "name": "probs",
+                    "type": "png"
+                },
+                {
+                    "name": "summary",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 642.5,
+                "height": 302,
+                "left": 1077,
+                "right": 1277,
+                "top": 340.5,
+                "width": 200,
+                "x": 1077,
+                "y": 340.5
+            },
+            "post_job_actions": {},
+            "tool_id": "naivestates",
+            "tool_state": "{\"counts\": {\"__class__\": \"RuntimeValue\"}, \"typemap\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1",
+            "type": "tool",
+            "uuid": "d2d34408-5fcb-4edd-9d7d-b7d9fa30bda8",
+            "workflow_outputs": [
+                {
+                    "label": "naivestates on input dataset(s): States CSV",
+                    "output_name": "states",
+                    "uuid": "9f9bf677-fc43-4f66-b885-9c6e35bdaccd"
+                },
+                {
+                    "label": "naivestates on input dataset(s): Probabilities",
+                    "output_name": "probs",
+                    "uuid": "3094ba5a-fd61-47b9-a20a-f5bd572dcfba"
+                },
+                {
+                    "label": "naivestates on input dataset(s): Summary",
+                    "output_name": "summary",
+                    "uuid": "cb377449-8b4f-4737-bdae-27f5013ab29f"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "401f223a-d7bc-4d18-adeb-d1547a8bc48f",
+    "version": 8
+}
