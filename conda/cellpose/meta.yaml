@@ -7,11 +7,12 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 1528cd9f2821132bbc47af1ee4e6a95780deb5664f74f3ca122b2a06fdf75f94
+  sha256: 761c32774847f30f70aba4860fa04e47fc1cb22e541a8b381f0c07a8c985fcce
 
 build:
-  number: 0
-  script: "{{ PYTHON }}  -m pip install . -vv"
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
+  skip: true  # [py2]
 
 requirements:
   host:
@@ -26,7 +27,7 @@ requirements:
     - scipy
     - tqdm
     - mxnet-mkl
-    - py-opencv
+    - opencv-python-headless
 
   run:
     - matplotlib
@@ -39,7 +40,7 @@ requirements:
     - scipy
     - tqdm
     - mxnet-mkl
-    - py-opencv
+    - opencv-python-headless
 
 test:
   imports:
