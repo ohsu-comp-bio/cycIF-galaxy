@@ -1,5 +1,5 @@
 {% set name = "cellpose" %}
-{% set version = "0.0.3.1" %}
+{% set version = "0.1.0.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,40 +7,38 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 761c32774847f30f70aba4860fa04e47fc1cb22e541a8b381f0c07a8c985fcce
+  sha256: 9b77e1879425f8a80d419c9bb802c5badf2dd37e986e6fdb54806d045a849de5
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
   skip: true  # [py2]
 
 requirements:
   host:
-    - matplotlib
-    - natsort
-    - numba
-    - numpy <=1.19.1
-    - pillow <=7.0.0
-    - pip
     - python
-    - scikit-image
+    - pip
+    - numpy <=1.19.2
     - scipy
-    - tqdm
-    - mxnet-mkl
-    - opencv-python-headless
+    - setuptools_scm
+    - pytest-runner
+    #- matplotlib <=3.3.2
+    #- natsort
+    #- numba
+    #- pillow <=7.0.0
+    #- scikit-image ==0.17.2
+    #- tqdm
 
   run:
-    - matplotlib
+    - python
+    - numpy <=1.19.1
+    - scipy
+    - matplotlib <=3.3.2
     - natsort
     - numba
-    - numpy <=1.19.1
     - pillow <=7.0.0
-    - python
-    - scikit-image
-    - scipy
+    #- scikit-image ==0.17.2
     - tqdm
-    - mxnet-mkl
-    - opencv-python-headless
 
 test:
   imports:
