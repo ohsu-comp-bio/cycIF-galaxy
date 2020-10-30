@@ -1,0 +1,40 @@
+<tool id="bioformats_to_ometiff" name="Generate OME-TIFF" version="@VERSION@">
+    <description>using Bio-Formats bioformats2raw and raw2ometiff pipeline</description>
+    <macros>
+        <token name="@VERSION@">0.1</token>
+    </macros>
+    <requirements>
+        <requirement type="package" version="0.2.5">bioformats2raw</requirement>
+        <requirement type="package" version="0.2.8">raw2ometiff</requirement>
+    </requirements>
+    <stdio>
+        <exit_code range="1:" level="fatal" description="Error occurred. Please check Tool Standard Error"/>
+    </stdio>
+    <version_command>echo "@VERSION@"</version_command>
+    <command>
+        <![CDATA[
+        mkdir -p raw_dir &&
+        bioformats2raw '$img' raw_dir &&
+        raw2ometiff raw_dir out.ome.tif
+
+        ]]>
+    </command>
+    <configfiles>
+        <inputs name="inputs" />
+    </configfiles>
+    <inputs>
+         <param name="img" type="data" label="Choose the image to be converted" help="Support formats like svs, czi, ometiff, and so on."/>
+    </inputs>
+    <outputs>
+        <data format="ome.tiff" name="out" from_work_dir="out.ome.tif" label="OME-TIFF image created from raw on ${on_string}"/>
+    </outputs>
+    <tests>
+    </tests>
+    <help>
+        <![CDATA[
+        
+        ]]>
+    </help>
+    <citations>
+    </citations>
+</tool>
