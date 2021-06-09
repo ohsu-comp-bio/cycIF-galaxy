@@ -1,0 +1,28 @@
+[submodule "mcmicro/S3segmenter"]
+	path = mcmicro/S3segmenter
+	url = https://github.com/ohsu-comp-bio/S3segmenter
+	branch = master
+[submodule "mcmicro/naivestates"]
+	path = mcmicro/naivestates
+	url = https://github.com/ohsu-comp-bio/naivestates
+	branch = master
+[submodule "mcmicro/ashlar"]
+	path = mcmicro/ashlar
+	url = https://github.com/ohsu-comp-bio/ashlar
+	branch = master
+[submodule "mcmicro/unmicst"]
+	path = mcmicro/unmicst
+	url = https://github.com/ohsu-comp-bio/unmicst
+	branch = master
+[submodule "mcmicro/basic-illumination"]
+	path = mcmicro/basic-illumination
+	url = https://github.com/ohsu-comp-bio/basic-illumination
+	branch = master
+[submodule "mcmicro/UNetCoreograph"]
+	path = mcmicro/UNetCoreograph
+	url = https://github.com/ohsu-comp-bio/UNetCoreograph
+	branch = master
+[submodule "mcmicro/quantification"]
+	path = mcmicro/quantification
+	url = https://github.com/ohsu-comp-bio/quantification
+	branch = master
