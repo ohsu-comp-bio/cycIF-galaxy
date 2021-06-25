@@ -1,0 +1,608 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Galaxy_MCMICRO_TMA_v1.0.0",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Images"
+                }
+            ],
+            "label": "Images",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "bottom": 334.55795488859474,
+                "height": 81.1300277709961,
+                "left": 208.11636788504464,
+                "right": 474.1163373674665,
+                "top": 253.42792711759867,
+                "width": 265.9999694824219,
+                "x": 208.11636788504464,
+                "y": 253.42792711759867
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "8e39e056-684e-412f-8227-b2ea725277d7",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Markers"
+                }
+            ],
+            "label": "Markers",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 752.7579043395536,
+                "height": 81.1299819946289,
+                "left": 938.9664040472273,
+                "right": 1204.9664040472273,
+                "top": 671.6279223449247,
+                "width": 266,
+                "x": 938.9664040472273,
+                "y": 671.6279223449247
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "5bfb6b0f-8d0c-4ff2-8bd8-d73262886c3d",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Cell Type Map"
+                }
+            ],
+            "label": "Cell Type Map",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 559.3329508501783,
+                "height": 81.1300277709961,
+                "left": 1204.2788856907894,
+                "right": 1470.2789772435237,
+                "top": 478.2029230791823,
+                "width": 266.0000915527344,
+                "x": 1204.2788856907894,
+                "y": 478.2029230791823
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "cf444717-8f3d-45da-bdd2-e0b372fcf351",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/perssond/basic_illumination/basic_illumination/1.0.2.3",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "in_files": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool BaSiC Illumination",
+                    "name": "in_files"
+                }
+            ],
+            "label": null,
+            "name": "BaSiC Illumination",
+            "outputs": [
+                {
+                    "name": "output_dfp",
+                    "type": "tiff"
+                },
+                {
+                    "name": "output_ffp",
+                    "type": "tiff"
+                }
+            ],
+            "position": {
+                "bottom": 592.0629040710908,
+                "height": 242.05996704101562,
+                "left": 207.31637137276783,
+                "right": 473.31637137276783,
+                "top": 350.00293703007515,
+                "width": 266,
+                "x": 207.31637137276783,
+                "y": 350.00293703007515
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/perssond/basic_illumination/basic_illumination/1.0.2.3",
+            "tool_shed_repository": {
+                "changeset_revision": "fd8dfd64f25e",
+                "name": "basic_illumination",
+                "owner": "perssond",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"in_files\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.2.3",
+            "type": "tool",
+            "uuid": "8710780a-2160-49cc-b0e6-f9f5f40805e7",
+            "workflow_outputs": [
+                {
+                    "label": "BaSiC Illumination on input dataset(s): FFP",
+                    "output_name": "output_ffp",
+                    "uuid": "1a7cf251-25d1-46ac-9fb4-b2dde75c88b7"
+                },
+                {
+                    "label": "BaSiC Illumination on input dataset(s): DFP",
+                    "output_name": "output_dfp",
+                    "uuid": "27bb7a87-f5cb-49ee-97af-8c4a1bd01e52"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/perssond/ashlar/ashlar/1.13.0.6",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "ldfp": {
+                    "id": 3,
+                    "output_name": "output_dfp"
+                },
+                "lffp": {
+                    "id": 3,
+                    "output_name": "output_ffp"
+                },
+                "lraw": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool ASHLAR",
+                    "name": "ldfp"
+                },
+                {
+                    "description": "runtime parameter for tool ASHLAR",
+                    "name": "lffp"
+                },
+                {
+                    "description": "runtime parameter for tool ASHLAR",
+                    "name": "upgrade"
+                }
+            ],
+            "label": null,
+            "name": "ASHLAR",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tiff"
+                }
+            ],
+            "position": {
+                "bottom": 522.3879208672315,
+                "height": 268.6600036621094,
+                "left": 465.1163889949483,
+                "right": 731.1162974422139,
+                "top": 253.72791720512217,
+                "width": 265.9999084472656,
+                "x": 465.1163889949483,
+                "y": 253.72791720512217
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/perssond/ashlar/ashlar/1.13.0.6",
+            "tool_shed_repository": {
+                "changeset_revision": "b3054f3d42b2",
+                "name": "ashlar",
+                "owner": "perssond",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"align_channel\": \"0\", \"filter_sigma\": null, \"tile_size\": null}, \"flip_x\": \"false\", \"flip_y\": \"false\", \"ldfp\": {\"__class__\": \"RuntimeValue\"}, \"lffp\": {\"__class__\": \"RuntimeValue\"}, \"lraw\": {\"__class__\": \"ConnectedValue\"}, \"max_shift\": \"30\", \"upgrade\": {\"decide\": \"do_upgrade\", \"__current_case__\": 0, \"markers_file\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.13.0.6",
+            "type": "tool",
+            "uuid": "1affa118-8d53-4f57-bbfe-01f17c7e7d3c",
+            "workflow_outputs": [
+                {
+                    "label": "ASHLAR on input dataset(s)",
+                    "output_name": "output",
+                    "uuid": "65c6e200-9245-4bde-a445-67d86f7b54e8"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/perssond/coreograph/unet_coreograph/2.2.0.3",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "source_image": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "UNetCoreograph",
+            "outputs": [
+                {
+                    "name": "tma_sections",
+                    "type": "input"
+                },
+                {
+                    "name": "masks",
+                    "type": "input"
+                },
+                {
+                    "name": "TMA_MAP",
+                    "type": "tiff"
+                }
+            ],
+            "position": {
+                "bottom": 615.3254266036184,
+                "height": 361.760009765625,
+                "left": 697.75390625,
+                "right": 963.7538146972656,
+                "top": 253.5654168379934,
+                "width": 265.9999084472656,
+                "x": 697.75390625,
+                "y": 253.5654168379934
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/perssond/coreograph/unet_coreograph/2.2.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "99308601eaa6",
+                "name": "coreograph",
+                "owner": "perssond",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"buffer\": \"2.0\", \"channel\": \"0\", \"cluster\": \"false\", \"downsamplefactor\": \"5\", \"sensitivity\": \"0.3\", \"source_image\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.2.0.3",
+            "type": "tool",
+            "uuid": "000e8a87-ea2d-43c3-857e-3af28c97324c",
+            "workflow_outputs": [
+                {
+                    "label": "UNetCoreograph on input dataset(s): TMA Map",
+                    "output_name": "TMA_MAP",
+                    "uuid": "2fa27938-92b7-4394-9877-3f7f9ce42b17"
+                },
+                {
+                    "label": "UNetCoreograph on input dataset(s): Masks",
+                    "output_name": "masks",
+                    "uuid": "f6178c76-81db-468e-bc36-44eb8bcdd8ce"
+                },
+                {
+                    "label": "UNetCoreograph on input dataset(s): Images",
+                    "output_name": "tma_sections",
+                    "uuid": "65b2d43b-3730-4d02-9c01-1a9200c563de"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/perssond/unmicst/unmicst/3.1.1.1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "image": {
+                    "id": 5,
+                    "output_name": "tma_sections"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "UnMicst",
+            "outputs": [
+                {
+                    "name": "previews",
+                    "type": "tiff"
+                },
+                {
+                    "name": "probabilities",
+                    "type": "tiff"
+                }
+            ],
+            "position": {
+                "bottom": 338.55043396913914,
+                "height": 242.0600128173828,
+                "left": 950.6413739426691,
+                "right": 1216.6413739426691,
+                "top": 96.49042115175634,
+                "width": 266,
+                "x": 950.6413739426691,
+                "y": 96.49042115175634
+            },
+            "post_job_actions": {
+                "HideDatasetActionpreviews": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "previews"
+                },
+                "HideDatasetActionprobabilities": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "probabilities"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/perssond/unmicst/unmicst/3.1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "6bec4fef6b2e",
+                "name": "unmicst",
+                "owner": "perssond",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"channel\": \"0\", \"image\": {\"__class__\": \"ConnectedValue\"}, \"mean\": \"-1.0\", \"model\": \"nucleiDAPI\", \"scalingfactor\": \"1.0\", \"stackoutput\": \"true\", \"stdev\": \"-1.0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.1.1.1",
+            "type": "tool",
+            "uuid": "c48fa351-e0dd-4ff1-adda-8d1d2c8830c8",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/perssond/s3segmenter/s3segmenter/1.2.1.3",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "imagePath": {
+                    "id": 5,
+                    "output_name": "tma_sections"
+                },
+                "stackProbPath": {
+                    "id": 6,
+                    "output_name": "probabilities"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool s3segmenter",
+                    "name": "contoursClassProbPath"
+                },
+                {
+                    "description": "runtime parameter for tool s3segmenter",
+                    "name": "nucleiClassProbPath"
+                }
+            ],
+            "label": null,
+            "name": "s3segmenter",
+            "outputs": [
+                {
+                    "name": "cell_mask",
+                    "type": "tiff"
+                },
+                {
+                    "name": "nuclei_mask",
+                    "type": "tiff"
+                },
+                {
+                    "name": "cell_outlines",
+                    "type": "tiff"
+                },
+                {
+                    "name": "nuclei_outlines",
+                    "type": "tiff"
+                }
+            ],
+            "position": {
+                "bottom": 745.0629859866953,
+                "height": 361.76007080078125,
+                "left": 939.1163761454417,
+                "right": 1205.1163761454418,
+                "top": 383.302915185914,
+                "width": 266,
+                "x": 939.1163761454417,
+                "y": 383.302915185914
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/perssond/s3segmenter/s3segmenter/1.2.1.3",
+            "tool_shed_repository": {
+                "changeset_revision": "37acf42a824b",
+                "name": "s3segmenter",
+                "owner": "perssond",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"cytoDilation\": \"5\", \"logSigma\": \"3 60\", \"CytoMaskChan\": \"1\", \"detectPuncta\": \"-1\", \"punctaSigma\": \"1\", \"punctaSD\": \"4\"}, \"contoursClassProbPath\": {\"__class__\": \"RuntimeValue\"}, \"crop\": \"noCrop\", \"cytoMethod\": \"distanceTransform\", \"imagePath\": {\"__class__\": \"ConnectedValue\"}, \"mask\": \"TMA\", \"nucleiClassProbPath\": {\"__class__\": \"RuntimeValue\"}, \"nucleiFilter\": \"IntPM\", \"nucleiRegion\": \"watershedContourInt\", \"probMapChan\": \"0\", \"saveFig\": \"true\", \"saveMask\": \"true\", \"segmentCytoplasm\": \"ignoreCytoplasm\", \"stackProbPath\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.1.3",
+            "type": "tool",
+            "uuid": "814d6854-dc43-4a58-a4c3-ddbd3e646c80",
+            "workflow_outputs": [
+                {
+                    "label": "cellOutlines",
+                    "output_name": "cell_outlines",
+                    "uuid": "84f1a3a1-84ad-4e44-b50e-aac43acad66e"
+                },
+                {
+                    "label": "cellMasks",
+                    "output_name": "cell_mask",
+                    "uuid": "28f484a8-8b55-4c79-9933-afbfdeb347a4"
+                },
+                {
+                    "label": "nucleiMasks",
+                    "output_name": "nuclei_mask",
+                    "uuid": "034657f8-0348-4508-9355-3d35581a521d"
+                },
+                {
+                    "label": "nucleiOutlines",
+                    "output_name": "nuclei_outlines",
+                    "uuid": "6b4091d3-dab2-4ba8-9d99-dffb17a9cf82"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/perssond/quantification/quantification/1.3.1.5",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "channel_names": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "image": {
+                    "id": 5,
+                    "output_name": "tma_sections"
+                },
+                "primary_mask": {
+                    "id": 7,
+                    "output_name": "cell_mask"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Quantification",
+                    "name": "supp_masks"
+                }
+            ],
+            "label": null,
+            "name": "Quantification",
+            "outputs": [
+                {
+                    "name": "quant_out",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "bottom": 519.5254179302015,
+                "height": 268.6600036621094,
+                "left": 1203.8163952361372,
+                "right": 1469.8163952361372,
+                "top": 250.86541426809208,
+                "width": 266,
+                "x": 1203.8163952361372,
+                "y": 250.86541426809208
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/perssond/quantification/quantification/1.3.1.5",
+            "tool_shed_repository": {
+                "changeset_revision": "928db0f952e3",
+                "name": "quantification",
+                "owner": "perssond",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"channel_names\": {\"__class__\": \"ConnectedValue\"}, \"image\": {\"__class__\": \"ConnectedValue\"}, \"primary_mask\": {\"__class__\": \"ConnectedValue\"}, \"supp_masks\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.3.1.5",
+            "type": "tool",
+            "uuid": "bad045a3-98f9-48d3-9b98-bcfa6100f9af",
+            "workflow_outputs": [
+                {
+                    "label": "Quantification on input dataset(s)",
+                    "output_name": "quant_out",
+                    "uuid": "e6762e48-b666-4bb5-ae47-aeabb4639996"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/perssond/naivestates/naivestates/1.6.1.3",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "counts": {
+                    "id": 8,
+                    "output_name": "quant_out"
+                },
+                "mct": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool naivestates",
+                    "name": "markers"
+                }
+            ],
+            "label": null,
+            "name": "naivestates",
+            "outputs": [
+                {
+                    "name": "states",
+                    "type": "csv"
+                },
+                {
+                    "name": "probs-png",
+                    "type": "png"
+                },
+                {
+                    "name": "summary-png",
+                    "type": "png"
+                },
+                {
+                    "name": "allfits-png",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 759.0754679056038,
+                "height": 508.06005859375,
+                "left": 1471.0038952361372,
+                "right": 1737.0038952361372,
+                "top": 251.01540931185383,
+                "width": 266,
+                "x": 1471.0038952361372,
+                "y": 251.01540931185383
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/perssond/naivestates/naivestates/1.6.1.3",
+            "tool_shed_repository": {
+                "changeset_revision": "a62b0c62270e",
+                "name": "naivestates",
+                "owner": "perssond",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"counts\": {\"__class__\": \"ConnectedValue\"}, \"id\": \"\", \"log\": \"auto\", \"markers\": {\"__class__\": \"RuntimeValue\"}, \"mct\": {\"__class__\": \"ConnectedValue\"}, \"plots\": \"png\", \"sfx\": \"_cellMasks\", \"umap\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.6.1.3",
+            "type": "tool",
+            "uuid": "07b0bd17-b7a3-4ac6-8ec4-6cecd8fb2b8a",
+            "workflow_outputs": [
+                {
+                    "label": "naivestates on input dataset(s): States CSV",
+                    "output_name": "states",
+                    "uuid": "7287f685-dd37-4944-b586-696d9ccc2d41"
+                },
+                {
+                    "label": "naivestates on input dataset(s): Probabilities",
+                    "output_name": "probs-png",
+                    "uuid": "af2b48d5-dd55-407b-9cb2-3ed48579acb0"
+                },
+                {
+                    "label": "naivestates on input dataset(s): Summary",
+                    "output_name": "summary-png",
+                    "uuid": "f201af07-b4c5-44a7-869b-0315861cd481"
+                },
+                {
+                    "label": "naivestates on input dataset(s): AllFits",
+                    "output_name": "allfits-png",
+                    "uuid": "cb1876d7-3429-45f0-9dd9-99be58e99352"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "737f0590-1d69-4dc2-be5c-80bd3dc1743b",
+    "version": 3
+}
